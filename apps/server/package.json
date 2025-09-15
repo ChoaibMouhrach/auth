@@ -4,14 +4,27 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "bun run src/index.ts"
+    "dev": "bun run --watch src/index.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
     "@auth/shared-constants": "workspace:*",
-    "@auth/shared-validations": "workspace:*"
+    "@auth/shared-validations": "workspace:*",
+    "@hono/zod-validator": "^0.7.2",
+    "bcryptjs": "^3.0.2",
+    "drizzle-orm": "^0.44.5",
+    "hono": "^4.9.7",
+    "pg": "^8.16.3",
+    "resend": "^6.0.2",
+    "zod": "^4.1.5"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@types/pg": "^8.15.5",
+    "drizzle-kit": "^0.31.4",
+    "tsx": "^4.20.5"
   },
   "peerDependencies": {
     "typescript": "^5"
